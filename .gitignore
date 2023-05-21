@@ -1,0 +1,5 @@
+# Project exclude paths
+/inventory_service/target/
+/order-service/target/
+/product-service/target/
+.idea
