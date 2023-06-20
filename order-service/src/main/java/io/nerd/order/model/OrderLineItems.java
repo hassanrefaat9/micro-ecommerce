@@ -1,13 +1,8 @@
 package io.nerd.order.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Table(name = "order_line_items")
@@ -15,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Builder
+@Setter
 public class OrderLineItems{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
