@@ -7,7 +7,6 @@ package io.nerd.productservice.controller;
 
 import io.nerd.productservice.dto.ProductRequest;
 import io.nerd.productservice.dto.ProductResponse;
-import io.nerd.productservice.model.ProductRepository;
 import io.nerd.productservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
