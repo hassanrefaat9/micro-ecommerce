@@ -26,7 +26,7 @@ import java.util.UUID;
 @Slf4j
 public class OrderService {
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest) {
         var order = new Order();
@@ -42,8 +42,8 @@ public class OrderService {
         List<String> sukCodes = order.getOrderLineItemsList().stream().map(OrderLineItems::getSkuCode)
                 .toList();
 
-        var inventoryResponses = webClient.get()
-                .uri("http://localhost:8083/api/inventory",
+        var inventoryResponses = webClientBuilder.build().get()
+                .uri("http://inventory-service/api/inventory",
                         uriBuilder ->
                                 uriBuilder.queryParam("sukCodes", sukCodes).build())
                 .retrieve()
